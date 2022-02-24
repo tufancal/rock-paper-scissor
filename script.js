@@ -77,8 +77,8 @@ const game = function () {
       computerScore++;
       console.log(`${playerScore}, ${computerScore}`);
     } else if (score.includes("draw")) {
-      computerScore += 0;
-      playerScore += 0;
+      // computerScore += 0;
+      // playerScore += 0;
       console.log(`${playerScore}, ${computerScore}`);
     }
   }
