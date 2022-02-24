@@ -2,7 +2,6 @@
 
 let playerScore = 0;
 let computerScore = 0;
-let score;
 
 // randomize a pick for the computer between rock, paper or scissor
 const computerPlay = function () {
@@ -70,20 +69,18 @@ const game = function () {
     const computerSelection = computerPlay();
     const score = playRound(playerSelection, computerSelection);
     console.log(score);
-    const calcScore = function () {
-      if (score.includes("win")) {
-        playerScore++;
-        return `${playerScore}, ${computerScore}`;
-      } else if (score.includes("lose")) {
-        computerScore++;
-        return `${playerScore}, ${computerScore}`;
-      } else if (score.includes("draw")) {
-        computerScore += 0;
-        playerScore += 0;
-        return `${playerScore}, ${computerScore}`;
-      }
-    };
-    console.log(calcScore());
+    // added an if-statement to calculate the score based on the words win, lose and draw
+    if (score.includes("win")) {
+      playerScore++;
+      console.log(`${playerScore}, ${computerScore}`);
+    } else if (score.includes("lose")) {
+      computerScore++;
+      console.log(`${playerScore}, ${computerScore}`);
+    } else if (score.includes("draw")) {
+      computerScore += 0;
+      playerScore += 0;
+      console.log(`${playerScore}, ${computerScore}`);
+    }
   }
 };
 
