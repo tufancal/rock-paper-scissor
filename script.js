@@ -1,5 +1,9 @@
 "use strict";
 
+let playerScore = 0;
+let computerScore = 0;
+let score;
+
 // randomize a pick for the computer between rock, paper or scissor
 const computerPlay = function () {
   let choice = Math.floor(Math.random() * 3);
@@ -47,6 +51,16 @@ function playRound(playerSelection, computerSelection) {
   }
 }
 
+// const calcScore = function () {
+//   if (score.includes("win")) {
+//     playerScore++;
+//     return playerScore;
+//   } else if (score.includes("lose")) {
+//     computerScore++;
+//     return computerScore;
+//   }
+// };
+
 // run the algorithm 5 times and print it into the console
 const game = function () {
   for (let i = 0; i < 5; i++) {
@@ -56,6 +70,20 @@ const game = function () {
     const computerSelection = computerPlay();
     const score = playRound(playerSelection, computerSelection);
     console.log(score);
+    const calcScore = function () {
+      if (score.includes("win")) {
+        playerScore++;
+        return `${playerScore}, ${computerScore}`;
+      } else if (score.includes("lose")) {
+        computerScore++;
+        return `${playerScore}, ${computerScore}`;
+      } else if (score.includes("draw")) {
+        computerScore += 0;
+        playerScore += 0;
+        return `${playerScore}, ${computerScore}`;
+      }
+    };
+    console.log(calcScore());
   }
 };
 
