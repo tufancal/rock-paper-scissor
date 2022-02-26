@@ -13,8 +13,9 @@ These are the possible outcomes for the game:
 6. Z draw Z
 
 Pseudocode:
-create a function to make a pick for the computer
-implement an algorithm to decide a winner
-give back a text when win/lose/draw
-create a function to count the score of each player
-create a function to simulate a round of rock, paper & scissor
+
+1. create a function to make a pick for the computer
+2. implement an algorithm to decide a winner
+3. give back a text when win/lose/draw
+4. create a function to count the score of each player
+5. create a function to simulate a round of rock, paper & scissor
