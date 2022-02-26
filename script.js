@@ -3,7 +3,7 @@
 let playerScore = 0;
 let computerScore = 0;
 
-// randomize a pick for the computer between rock, paper or scissor
+// make a pick for the computer
 const computerPlay = function () {
   let choice = Math.floor(Math.random() * 3);
 
@@ -16,7 +16,7 @@ const computerPlay = function () {
   }
 };
 
-// my idea of the algorithm
+// Idea: Algorithm
 function playRound(playerSelection, computerSelection) {
   if (playerSelection.toUpperCase() === "ROCK") {
     const rock = "Rock";
@@ -50,17 +50,16 @@ function playRound(playerSelection, computerSelection) {
   }
 }
 
-// const calcScore = function () {
-//   if (score.includes("win")) {
-//     playerScore++;
-//     return playerScore;
-//   } else if (score.includes("lose")) {
-//     computerScore++;
-//     return computerScore;
-//   }
-// };
+// to count the score of each player
+const calcScore = function (score) {
+  if (score.includes("win")) {
+    playerScore++;
+  } else if (score.includes("lose")) {
+    computerScore++;
+  }
+  console.log(`${playerScore}, ${computerScore}`);
+};
 
-// run the algorithm 5 times and print it into the console
 const game = function () {
   for (let i = 0; i < 5; i++) {
     let playerSelection = prompt(
@@ -69,18 +68,15 @@ const game = function () {
     const computerSelection = computerPlay();
     const score = playRound(playerSelection, computerSelection);
     console.log(score);
-    // added an if-statement to calculate the score based on the words win, lose and draw
-    if (score.includes("win")) {
-      playerScore++;
-      console.log(`${playerScore}, ${computerScore}`);
-    } else if (score.includes("lose")) {
-      computerScore++;
-      console.log(`${playerScore}, ${computerScore}`);
-    } else if (score.includes("draw")) {
-      // computerScore += 0;
-      // playerScore += 0;
-      console.log(`${playerScore}, ${computerScore}`);
-    }
+    console.log(calcScore(score));
+  }
+  // decide a winner
+  if (playerScore > computerScore) {
+    console.log("You have beaten the computer!");
+  } else if (playerScore < computerScore) {
+    console.log("You lost against the computer! Better luck next time ;)");
+  } else {
+    console.log("Your scores are equal!");
   }
 };
 
