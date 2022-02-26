@@ -11,3 +11,10 @@ These are the possible outcomes for the game:
 4. X draw X
 5. Y draw Y
 6. Z draw Z
+
+Pseudocode:
+create a function to make a pick for the computer
+implement an algorithm to decide a winner
+give back a text when win/lose/draw
+create a function to count the score of each player
+create a function to simulate a round of rock, paper & scissor
