@@ -2,6 +2,7 @@
 
 let playerScore = 0;
 let computerScore = 0;
+let playing = true;
 
 // make a pick for the computer
 const computerPlay = function () {
@@ -74,11 +75,22 @@ const defineComputer = function (computerSelection) {
 const defineWinner = function (playerScore, computerScore) {
   if (playerScore === 5 && playerScore > computerScore) {
     winner.textContent = "You won against the Computer! Congratulations!";
+    playing = false;
   } else if (computerScore === 5 && playerScore < computerScore) {
     winner.textContent = "You lost, better luck next time! :)";
+    playing = false;
   }
 };
 
+const game = function (choice) {
+  if (playing) {
+    const computerSelection = computerPlay();
+    const score = playRound(choice, computerSelection);
+    defineComputer(computerSelection);
+    calcScore(score);
+    defineWinner(playerScore, computerScore);
+  }
+};
 // const game = function () {
 //   for (let i = 0; i < 5; i++) {
 //     // let playerSelection = prompt(
@@ -118,25 +130,13 @@ const winner = document.getElementById("winner");
 
 // addEventListener to three buttons
 rockchoice.addEventListener("click", function () {
-  const computerSelection = computerPlay();
-  defineComputer(computerSelection);
-  const score = playRound("Rock", computerSelection);
-  calcScore(score);
-  defineWinner(playerScore, computerScore);
+  game("Rock");
 });
 
 paperchoice.addEventListener("click", function () {
-  const computerSelection = computerPlay();
-  defineComputer(computerSelection);
-  const score = playRound("Paper", computerSelection);
-  calcScore(score);
-  defineWinner(playerScore, computerScore);
+  game("Paper");
 });
 
 scissorchoice.addEventListener("click", function () {
-  const computerSelection = computerPlay();
-  defineComputer(computerSelection);
-  const score = playRound("Scissor", computerSelection);
-  calcScore(score);
-  defineWinner(playerScore, computerScore);
+  game("Scissor");
 });
