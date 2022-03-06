@@ -6,10 +6,48 @@
 
 body {
   text-align: center;
+  font-family: "Ubuntu Mono", monospace;
+  background-color: #3d3b8e;
+  color: #f9f9f9;
+}
+
+button {
+  width: 100px;
+  height: 70px;
+  background-color: #6883ba;
+  color: #f9f9f9;
+  border-radius: 25px;
+  border: 1px solid #f9f9f9;
+}
+
+#player {
+  margin-top: 50px;
+  margin-bottom: 1rem;
+}
+
+#playerhead {
+  margin-bottom: 1rem;
+}
+
+#reset {
+  margin-bottom: 5rem;
+}
+
+#computer {
+  margin-bottom: 5rem;
+}
+
+#computerhead {
+  margin-bottom: 1rem;
+}
+
+#computerselect {
+  font-size: 20px;
 }
 
 #scoreboard {
   display: flex;
   gap: 10px;
   justify-content: center;
+  margin-bottom: 2rem;
 }
