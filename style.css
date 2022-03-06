@@ -1,0 +1,15 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  text-align: center;
+}
+
+#scoreboard {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
