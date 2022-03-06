@@ -91,33 +91,14 @@ const game = function (choice) {
     defineWinner(playerScore, computerScore);
   }
 };
-// const game = function () {
-//   for (let i = 0; i < 5; i++) {
-//     // let playerSelection = prompt(
-//     //   `Round ${i + 1}: Choose between: rock, paper or scissor`
-//     // );
-//     const computerSelection = computerPlay();
-//     const score = playRound(playerSelection, computerSelection);
-//     console.log(score);
-//     console.log(calcScore(score));
-//   }
-//   // decide a winner
-//   if (playerScore > computerScore) {
-//     console.log("You have beaten the computer!");
-//   } else if (playerScore < computerScore) {
-//     console.log("You lost against the computer! Better luck next time ;)");
-//   } else {
-//     console.log("Your scores are equal!");
-//   }
-// };
-
-// console.log(game());
 
 // declaring variables DOM
 // Buttons
 const rockchoice = document.getElementById("rockchoice");
 const paperchoice = document.getElementById("paperchoice");
 const scissorchoice = document.getElementById("scissorchoice");
+
+const reset = document.getElementById("resetbtn");
 
 // ? Computer
 const computerChoice = document.getElementById("computerselect");
@@ -139,4 +120,15 @@ paperchoice.addEventListener("click", function () {
 
 scissorchoice.addEventListener("click", function () {
   game("Scissor");
+});
+
+// add Reset button
+reset.addEventListener("click", function () {
+  playing = true;
+  winner.textContent = "";
+  playerScore = 0;
+  computerScore = 0;
+  computerChoice.textContent = "?";
+  playerScoreBoard.textContent = playerScore;
+  computerScoreBoard.textContent = computerScore;
 });
