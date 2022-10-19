@@ -1,5 +1,7 @@
 # rock-paper-scissor
 
+Live: https://twofun2fun.github.io/rock-paper-scissor/
+
 This is going to be my first project in Javascript.
 It is about the grade-school game "Rock, Paper and Scissor".
 
